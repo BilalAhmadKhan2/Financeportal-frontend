@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import InvoiceSearch from './InvoiceSearch';
+import { Container, Navbar } from 'react-bootstrap';
+import './App.css'; // Import the CSS file
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App d-flex flex-column min-vh-100">
+      <header>
+        <Navbar bg="dark" variant="dark" expand="lg">
+          <Container>
+            <Navbar.Brand>Finance Portal</Navbar.Brand>
+          </Container>
+        </Navbar>
       </header>
+      <div className="flex-grow-1 main-content">
+        <main className="py-3">
+          <InvoiceSearch />
+        </main>
+      </div>
+      <footer>
+        <Container fluid className="bg-dark text-white text-center py-3">
+          &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
+        </Container>
+      </footer>
     </div>
   );
 }
